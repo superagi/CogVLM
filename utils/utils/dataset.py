@@ -66,7 +66,8 @@ def read_json(path):
     with open(path, 'r') as file:
         data = json.load(file)
         for item in data:
-            item['image'] = "/workspace/CogVLM/data/" + item['image']
+            item['imagePath'] = item['imagePath'].replace("/Users/adarshjha/Downloads/SOC_Data/images/", "")
+            item['imagePath'] = "/workspace/CogVLM/data/" + item['imagePath']
         return data
 
 class ItemDataset(Dataset):
@@ -87,6 +88,8 @@ class ItemDataset(Dataset):
     def load_data(self, data_dir):
         all_data = read_json(data_dir)
         print_rank0(f"find {len(all_data)} samples in all...")
+        import pdb;
+        pdb.set_trace()
         return all_data
     
     def __len__(self):
@@ -96,14 +99,14 @@ class ItemDataset(Dataset):
         data = self.data[index]
         # img
         try:
-            img = Image.open(data['image']).convert('RGB')
+            img = Image.open(data['imagePath']).convert('RGB')
         except Exception as e:
             print_rank0(e, level=logging.WARNING)
             return {}
         img_dict = self.process_img(img)
         # text
-        label = data['answer']
-        prompt = data['question']
+        label = data['Answer']
+        prompt = data['Question']
 
         uni_key = str(uuid.uuid4())
         text_dict = self.process_text(label, prompt)
