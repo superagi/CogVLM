@@ -66,8 +66,7 @@ def read_json(path):
     with open(path, 'r') as file:
         data = json.load(file)
         for item in data:
-            item['imagePath'] = item['imagePath'].replace("/Users/adarshjha/Downloads/SOC_Data/images/", "")
-            item['imagePath'] = "/workspace/CogVLM/data/" + item['imagePath']
+            item['imagePath'] = "/workspace/CogVLM/data/images" + item['imagePath'][1:]
         return data
 
 class ItemDataset(Dataset):
@@ -88,8 +87,7 @@ class ItemDataset(Dataset):
     def load_data(self, data_dir):
         all_data = read_json(data_dir)
         print_rank0(f"find {len(all_data)} samples in all...")
-        import pdb;
-        pdb.set_trace()
+        print(f'all_data: {all_data[0]}')
         return all_data
     
     def __len__(self):

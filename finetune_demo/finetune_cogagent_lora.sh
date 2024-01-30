@@ -19,7 +19,7 @@ VERSION="vqa"
 #     --version $VERSION"
 
 MODEL_ARGS="--from_pretrained $MODEL_TYPE \
-    --max_length 400 \
+    --max_length 1024 \
     --local_tokenizer lmsys/vicuna-7b-v1.5 \
     --version $VERSION"
 # TIPS: max_length include low-resolution image sequence (which has 256 tokens) 
@@ -30,8 +30,8 @@ HOST_FILE_PATH="hostfile"
 
 # train_data="../archive_split/train"
 # valid_data="../archive_split/valid"
-train_data="../data/wf-3-final.json"
-valid_data="../data/wf-3-final.json"
+train_data="../data/json/apollo_ferret_.json"
+valid_data="../data/json/apollo_ferret_.json"
 
 gpt_options=" \
        --experiment-name finetune-$MODEL_TYPE \
