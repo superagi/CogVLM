@@ -30,8 +30,8 @@ HOST_FILE_PATH="hostfile"
 
 # train_data="../archive_split/train"
 # valid_data="../archive_split/valid"
-train_data="../data/json/apollo_ferret_.json"
-valid_data="../data/json/apollo_ferret_.json"
+train_data="../data/json/apollo_ferret_noscale.json"
+valid_data="../data/json/apollo_ferret_noscale.json"
 
 gpt_options=" \
        --experiment-name finetune-$MODEL_TYPE \
