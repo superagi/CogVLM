@@ -12,9 +12,9 @@ cd ..
 mkdir data 
 cd data
 mkdir images
-aws s3 cp s3://canva-data/images /data/images --recursive
-aws s3 cp s3://canva-data/combined.json /data/
+aws s3 cp s3://canva-data/images CogVLM/data/images --recursive
+aws s3 cp s3://canva-data/combined.json CogVLM/data/
 cd ../finetune_demo
 # Finetuning
 bash finetune_cogagent_lora.sh
-aws s3 cp finetune_demo/checkpoints/ s3://canva-model/ --recursive 
+aws s3 cp /CogVLM/finetune_demo/checkpoints/ s3://canva-model/ --recursive 
