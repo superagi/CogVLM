@@ -66,7 +66,7 @@ def read_json(path):
     with open(path, 'r') as file:
         data = json.load(file)
         for item in data:
-            item['imagePath'] = "/CogVLM/data" + item['imagePath'][1:]
+            item['imagepath'] = "/CogVLM/data/all" + item['imagepath'][1:]
         return data
 
 class ItemDataset(Dataset):
@@ -97,14 +97,14 @@ class ItemDataset(Dataset):
         data = self.data[index]
         # img
         try:
-            img = Image.open(data['imagePath']).convert('RGB')
+            img = Image.open(data['imagepath']).convert('RGB')
         except Exception as e:
             print_rank0(e, level=logging.WARNING)
             return {}
         img_dict = self.process_img(img)
         # text
-        label = data['Answer']
-        prompt = data['Question']
+        label = data['answer']
+        prompt = data['question']
 
         uni_key = str(uuid.uuid4())
         text_dict = self.process_text(label, prompt)
