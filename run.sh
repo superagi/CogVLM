@@ -19,6 +19,6 @@ aws s3 cp s3://canva-data3.0 CogVLM/data --recursive
 cd ../finetune_demo
 # Finetuning
 bash finetune_cogagent_lora.sh
-aws s3 cp CogVLM/finetune_demo/checkpoints/ s3://canva-model/ --recursive 
+# aws s3 cp CogVLM/finetune_demo/checkpoints/ s3://canva-model/ --recursive 
 
 # /Users/contlosuperagi/CogVLM/finetune_demo/checkpoints
