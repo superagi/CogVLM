@@ -30,8 +30,8 @@ HOST_FILE_PATH="hostfile"
 
 # train_data="../archive_split/train"
 # valid_data="../archive_split/valid"
-train_data="../data/combined.json"
-valid_data="../data/combined.json"
+train_data="../data/merged_canva_filtered.json"
+valid_data="../data/merged_canva_filtered.json"
 
 gpt_options=" \
        --experiment-name finetune-$MODEL_TYPE \
