@@ -2,8 +2,8 @@ compute:
   cluster: r4z8
   gpus: 8
 name: jai-cog
-# image: mosaicml/pytorch:2.1.0_cu121-python3.10-ubuntu20.04
-image: mosaicml/pytorch:2.2.0_cu121-python3.10-ubuntu20.04
+image: mosaicml/pytorch:2.1.0_cu121-python3.10-ubuntu20.04
+# image: mosaicml/pytorch:2.2.0_cu121-python3.10-ubuntu22.04
 integrations:
 - integration_type: git_repo
   git_repo: superagi/CogVLM
