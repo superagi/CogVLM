@@ -14,8 +14,8 @@ cd ..
 # sudo ./aws/install
 mkdir data 
 cd data
-mkdir images
-aws s3 cp s3://canva-data3.0 CogVLM/data --recursive
+# mkdir images
+aws s3 cp s3://canva-data3.0/ CogVLM/data --recursive
 cd ..
 cd finetune_demo
 # Finetuning
