@@ -2,6 +2,8 @@ compute:
   cluster: r4z8
   gpus: 8
 name: jai-cog
+env_variables:
+  MCLI_TIMEOUT: 30
 image: mosaicml/pytorch:2.2.0-py3.10-cuda12.1.1-devel-ubuntu22.04
 integrations:
 - integration_type: git_repo
