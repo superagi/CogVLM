@@ -63,6 +63,8 @@ def find_all_files(path, suffix=".jpg"):
 #         return ret
 
 def read_json(path):
+    print("Current path : ", os.getcwd())
+    print("PATH : ", path)
     with open(path, 'r') as file:
         data = json.load(file)
         for item in data:
