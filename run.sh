@@ -15,7 +15,7 @@ cd ..
 mkdir data 
 cd data
 # mkdir images
-aws s3 cp s3://canva-data3.0/ CogVLM/data --recursive
+aws s3 cp s3://canva-data3.0/ ./ --recursive
 cd ..
 cd finetune_demo
 # Finetuning
