@@ -1,5 +1,5 @@
 compute:
-  cluster: r4z8
+  cluster: r7z2
   gpus: 8
 name: jai-cog
 # image: mosaicml/pytorch:2.1.0_cu121-python3.10-ubuntu20.04
