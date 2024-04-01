@@ -21,4 +21,4 @@ cd finetune_demo
 # Finetuning
 bash finetune_cogagent_lora.sh
 aws s3 cp checkpoints/ s3://canva-model/ --recursive 
-aws s3 cp ../../log.txt s3://canva-model/ 
+aws s3 cp ../log.txt s3://canva-model/ 
